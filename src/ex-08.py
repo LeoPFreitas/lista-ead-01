@@ -17,11 +17,15 @@ espacos = len(nome) - len(nomeSemEsp)
 # Contando vogais
 contador = 0
 vogais = ['a', 'e', 'i', 'o', 'u']
+vogal = []
 for n in range(len(vogais)):
     for i in range(len(nomeSemEsp)):
         if vogais[n] == nomeSemEsp[i]:
             contador += 1
-
+    vogal.append(contador)
+    contador = 0
 # Imprimindo na tela
-print("O nome entrado é {}, ele possui {} espaços e {} vogais".format(
-    nome, espacos, contador))
+print("O nome entrado é '{}', ele possui {} espaços.".format(
+    nome, espacos))
+for i in range(len(vogal)):
+    print("A vogal '{}' aparece {} vezes".format(vogais[i], vogal[i]))
